@@ -1,0 +1,16 @@
+name: PR metadata
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+      - ready_for_review
+      - synchronize
+
+jobs:
+  pr-metadata:
+    uses: roschaefer/reusable-workflows/.github/workflows/pr-metadata.yml@b02f81648de1b7a9f1ae5b6d00e26dd3c83edec3 # main
+    permissions:
+      pull-requests: read
